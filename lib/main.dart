@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+
+import 'package:test_widgets/my_timezone.dart';
 import 'package:test_widgets/my_notification.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureLocalTimeZone();
+  await initMyNotification();
   runApp(MyApp());
 }
 
@@ -18,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
